@@ -1,0 +1,44 @@
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'postit/style3.css' %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="menu">
+    <ul class="menu-list">
+      <li>teste</li>
+      <li>teste</li>
+    </ul>
+  
+  </div>
+  <h1>Anotações</h1>
+  <div class="wrapper">
+    
+    {% if posts %}
+      <ul class="b_post">
+        {% for post in posts %}
+          <li class="p-list">
+
+            {% if post.imagem %}
+              <img src="{{ post.imagem.url }}">
+            {% endif %}
+
+            <div class="text_post">
+              <h2>{{ post.title }}</h2>
+              <h2>Autor: {{ post.author }}</h2>
+              <p>{{ post.text }}</p>
+          
+            </div>
+            <div class="link_post">
+                   {% if post.upload %}
+                      <a href='{{ post.upload.url }}'>{{ post.upload }}</a>
+                   {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</body>
+<html>
