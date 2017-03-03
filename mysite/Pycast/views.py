@@ -13,8 +13,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
 
-        return Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[:20]
+        #return Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[:20]
 
-        #return render(request, 'blog/post_list.html', {})
+        return Post.objects.order_by('-published_date')
 
-        #return render(request, {'posts': posts })

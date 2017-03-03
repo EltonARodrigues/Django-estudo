@@ -26,7 +26,7 @@ body {
 .menu{
     width: 100%;
     position: inherit;
-    background: #009688;
+    background: #009688; 
 
 
 }
@@ -35,6 +35,10 @@ body {
     text-align: center;
     list-style: none;
     display: inline;
+}
+
+.menu_link{
+    
 }
 
 
@@ -61,7 +65,7 @@ body {
 .link_post{
     background: #F1FBE5;  
 }
-a{
+.img_link{
     text-decoration: none;
     color: #1155CC;
 }
